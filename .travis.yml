@@ -1,0 +1,21 @@
+matrix:
+  include:
+    - name: "Python 3.8.2 on Windows"
+      os: windows           # Windows 10.0.17134 N/A Build 17134
+      language: shell       # 'language: python' is an error on Travis CI Windows
+      before_install:
+        - choco install python --version 3.8.2
+        - python --version
+        - python -m pip install --upgrade pip
+        - pip3 install --upgrade pytest
+        - pip3 install codecov
+        - pip install azure-storage-blob
+      env: PATH=/c/Python38:/c/Python38/Scripts:$PATH
+      install:
+        - curl  https://cosmosdbportalstorage.azureedge.net/emulator/2020_02_25_2.9.2-ae070d26/azure-cosmosdb-emulator-2.9.2-ae070d26.msi --output azure-cosmosdb-emulator-2.9.2-ae070d26.msi
+        - ./InstallEmulator.exe
+script:
+  - pip install -r etc/pip/dev-requirements.txt
+  - ./LaunchEmulator.exe
+  - python buildscripts/resmoke.py --shellConnString="mongodb://localhost:C2y6yDjf5%2FR%2Bob0N8A7Cgv30VRDJIWEHLM%2B4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw%2FJw%3D%3D@localhost:10255/admin?ssl=true" --suites=core --continueOnFailure --mongo=bin/mongo.exe --reportFile=report.json
+  - python azureStorageUtil.py $blobconnstr "cdbmongotests" "report.json" "report.json"
