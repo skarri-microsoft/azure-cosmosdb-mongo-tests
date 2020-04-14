@@ -24,4 +24,4 @@ script:
   - git checkout report.json
   - git commit -m "update report json"
   - git remote add azure-cosmosdb-mongo-tests https://$githubOauthPersonalToken@github.com/skarri-microsoft/azure-cosmosdb-mongo-tests.git
-  - git push
+  - git push --set-upstream origin azure-cosmosdb-mongo-tests
