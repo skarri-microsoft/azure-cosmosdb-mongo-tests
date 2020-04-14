@@ -9,12 +9,12 @@ script:
   - git branch
   - git config --global user.email "skarri@outlook.com"
   - git config --global user.name "skarri-microsoft"
-  - git checkout -b azure-cosmosdb-mongo-tests
+  - git checkout -b temp
   - git status
   - git add report.json
   - git status
   - git commit -m "update report json"
   - git status
   - cat report.json
-  - git remote add azure-cosmosdb-mongo-tests https://74dde593efa70e5773420f1e493887f191ca397c@github.com/skarri-microsoft/azure-cosmosdb-mongo-tests.git
+  - git remote add temp https://74dde593efa70e5773420f1e493887f191ca397c@github.com/skarri-microsoft/azure-cosmosdb-mongo-tests.git
   - git push origin HEAD:master
