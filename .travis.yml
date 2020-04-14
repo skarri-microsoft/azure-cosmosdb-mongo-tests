@@ -18,7 +18,10 @@ script:
   - pip install -r etc/pip/dev-requirements.txt
   - ./LaunchEmulator.exe
   - python buildscripts/resmoke.py --shellConnString="mongodb://localhost:C2y6yDjf5%2FR%2Bob0N8A7Cgv30VRDJIWEHLM%2B4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw%2FJw%3D%3D@localhost:10255/admin?ssl=true" --suites=core --continueOnFailure --mongo=bin/mongo.exe --reportFile=report.json
-git:
+  - git config --global user.email "skarri@outlook.com"
+  - git config --global user.name "skarri-microsoft"
+  - git checkout -b azure-cosmosdb-mongo-tests
   - git checkout report.json
-  - git commit -m "update for report"
+  - git commit -m "update report json"
+  - git remote add azure-cosmosdb-mongo-tests https://$githubOauthPersonalToken@github.com/skarri-microsoft/azure-cosmosdb-mongo-tests.git
   - git push
