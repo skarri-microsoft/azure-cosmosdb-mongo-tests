@@ -6,10 +6,13 @@ matrix:
 script:
   - dir
   - dir > report.json
+  - git branch
   - git config --global user.email "skarri@outlook.com"
   - git config --global user.name "skarri-microsoft"
   - git checkout -b azure-cosmosdb-mongo-tests
-  - git checkout report.json
+  - git status
+  - git add report.json
   - git commit -m "update report json"
+  - git status
   - git remote add azure-cosmosdb-mongo-tests https://$githubOauthPersonalToken@github.com/skarri-microsoft/azure-cosmosdb-mongo-tests.git
   - git push --set-upstream origin azure-cosmosdb-mongo-tests
