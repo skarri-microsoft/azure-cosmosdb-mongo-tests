@@ -9,6 +9,7 @@ script:
   - git branch
   - git config --global user.email "skarri@outlook.com"
   - git config --global user.name "skarri-microsoft"
+  - git checkout dev
   - git pull https://74dde593efa70e5773420f1e493887f191ca397c@github.com/skarri-microsoft/azure-cosmosdb-mongo-tests.git
   - git status
   - git add report.json
