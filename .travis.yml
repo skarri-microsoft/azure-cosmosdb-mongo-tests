@@ -9,9 +9,9 @@ script:
   - git branch
   - git config --global user.email "skarri@outlook.com"
   - git config --global user.name "skarri-microsoft"
-  - curl -H 'Authorization: token 74dde593efa70e5773420f1e493887f191ca397c'
-  - git clone https://74dde593efa70e5773420f1e493887f191ca397c@github.com/skarri-microsoft/azure-cosmosdb-mongo-tests.git --branch=temp1 temp1
-  - git remote set-url origin https://74dde593efa70e5773420f1e493887f191ca397c@github.com/skarri-microsoft/azure-cosmosdb-mongo-tests.git
+  - curl -H 'Authorization: token 131810a185d98dd83e3ac7fedfa01df4fecc2f41'
+  - git clone https://131810a185d98dd83e3ac7fedfa01df4fecc2f41@github.com/skarri-microsoft/azure-cosmosdb-mongo-tests.git --branch=temp1 temp1
+  - git remote set-url origin https://131810a185d98dd83e3ac7fedfa01df4fecc2f41@github.com/skarri-microsoft/azure-cosmosdb-mongo-tests.git
   - git branch
   - git status
   - git add report.json
