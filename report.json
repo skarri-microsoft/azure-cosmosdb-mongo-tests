@@ -1,1 +1,11 @@
-test2
+azureStorageUtil.py
+bin/
+buildscripts/
+etc/
+InstallEmulator.exe*
+jstests/
+LaunchEmulator.exe*
+README.md
+report.json
+Scripts/
+tools/
