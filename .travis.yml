@@ -5,18 +5,18 @@ matrix:
       language: shell       # 'language: python' is an error on 
 script:
   - dir
-  - dir > report.json
+  - dir > report1.json
   - git branch
   - git config --global user.email "skarri@outlook.com"
   - git config --global user.name "skarri-microsoft"
-  - curl -H 'Authorization: token 131810a185d98dd83e3ac7fedfa01df4fecc2f41'
-  - git clone https://131810a185d98dd83e3ac7fedfa01df4fecc2f41@github.com/skarri-microsoft/azure-cosmosdb-mongo-tests.git --branch=temp1 temp1
-  - git remote set-url origin https://131810a185d98dd83e3ac7fedfa01df4fecc2f41@github.com/skarri-microsoft/azure-cosmosdb-mongo-tests.git
+  - curl -u "skarri-microsoft:752e7cda672c5ebee56fa74853c53c5381289221" https://github.com/skarri-microsoft/azure-cosmosdb-mongo-tests.git
+  - git remote set-url origin https://752e7cda672c5ebee56fa74853c53c5381289221@github.com/skarri-microsoft/azure-cosmosdb-mongo-tests.git
+  - git checkout temp
   - git branch
   - git status
-  - git add report.json
+  - git add report1.json
   - git status
   - git commit -m "update report json"
   - git status
-  - cat report.json
-  - git push -fq origin temp1
+  - cat report1.json
+  - git push -fq origin temp
